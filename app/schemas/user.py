@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from pydantic import BaseModel, ConfigDict, EmailStr, Field 
 
 class UserCreate(BaseModel):
     email: EmailStr
@@ -19,6 +19,7 @@ class UserRead(BaseModel):
     id: int
     email: EmailStr
     full_name: str
+    is_verified: bool
     is_active: bool
     created_at: datetime
 
