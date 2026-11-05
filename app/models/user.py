@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from sqlalchemy import Boolean, DateTime, Integer, String
+from sqlalchemy import Boolean, DateTime, Integer, String, Column
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.database import Base
@@ -46,3 +46,10 @@ class User(Base):
         default=utc_now,
         nullable=False,
     )
+    
+    role = Column(
+    String(20),
+    nullable=False,
+    default="user",
+    server_default="user",
+)
